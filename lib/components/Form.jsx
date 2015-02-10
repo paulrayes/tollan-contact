@@ -84,7 +84,7 @@ return;
 
 				this.setState({processing: true});
 
-				tollan.api.post('contact', form.cleanedData)
+				tollan.api.postAction('contact/submitForm', form.cleanedData)
 					.then(function(response) {
 						if (response.statusCode === 200) {
 							this.setState({submitted: true});
