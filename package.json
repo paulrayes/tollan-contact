@@ -11,11 +11,18 @@
   "main": "lib/index.js",
   "browser": "lib/browser.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm run lint:watch",
+    "lint": "eslint lib",
+    "lint:watch": "gaze 'eslint $path' 'lib/**/*.js'"
   },
   "dependencies": {
     "campaign": "^1.5.0",
     "node-jsx": "^0.12.4",
     "verror": "^1.6.0"
+  },
+  "devDependencies": {
+    "gaze-cli": "^0.1.0",
+    "eslint": "^0.15.0"
   }
 }
