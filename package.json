@@ -9,7 +9,13 @@
     "url": "https://bitbucket.org/leoninepublishers/tollan-contact"
   },
   "main": "lib/index.js",
-  "browser": "lib/browser.js",
+  "browserify": {
+    "transform": [
+      "babelify",
+      "envify",
+      "isbrowser"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm run lint:watch",
@@ -17,9 +23,14 @@
     "lint:watch": "gaze 'eslint $path' 'lib/**/*.js'"
   },
   "dependencies": {
+    "babel": "^5.4.7",
     "campaign": "^1.5.0",
+    "envify": "^3.4.0",
+    "isbrowser": "0.0.4",
+    "logule": "^2.0.1",
     "node-jsx": "^0.12.4",
-    "verror": "^1.6.0"
+    "verror": "^1.6.0",
+    "forrrm": "*"
   },
   "devDependencies": {
     "gaze-cli": "^0.1.0",
